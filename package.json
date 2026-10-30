@@ -1,0 +1,46 @@
+{
+  "name": "BalancaPortuaria",
+  "version": "4.0.0",
+  "description": "Sistema de Balança Portuária — Porto do Recife",
+  "main": "main.js",
+  "author": "Pedro Maia",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "br.com.portodorecife.balanca",
+    "productName": "Balança Portuária",
+    "icon": "assets/icone-balanca.ico",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icone-balanca.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "css/**",
+      "js/**",
+      "libs/**",
+      "assets/**",
+      "node_modules/**"
+    ],
+    "asar": true
+  },
+  "contributors": [
+    "Pedro Maia — Desenvolvedor do Sistema"
+  ]
+}
